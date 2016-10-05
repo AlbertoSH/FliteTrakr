@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/flitetrakr.iml" filepath="$PROJECT_DIR$/.idea/modules/flitetrakr.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/flitetrakr_integrationTest.iml" filepath="$PROJECT_DIR$/.idea/modules/flitetrakr_integrationTest.iml" group="flitetrakr" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/flitetrakr_main.iml" filepath="$PROJECT_DIR$/.idea/modules/flitetrakr_main.iml" group="flitetrakr" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/flitetrakr_test.iml" filepath="$PROJECT_DIR$/.idea/modules/flitetrakr_test.iml" group="flitetrakr" />
+    </modules>
+  </component>
+</project>

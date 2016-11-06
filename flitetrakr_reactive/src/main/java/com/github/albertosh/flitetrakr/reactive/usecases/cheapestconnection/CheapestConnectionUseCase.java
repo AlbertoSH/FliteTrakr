@@ -61,7 +61,7 @@ public class CheapestConnectionUseCase
                     }
                 })
                 .flatMap(list -> round(distance, father, seen, queue))
-                .flatMap(error -> {
+                .flatMap(aVoid -> {
                     if (father.get(input.getTo()) == null) {
                         return Observable.error(CheapestConnectionUseCaseError.connectionNotFound());
                     } else {

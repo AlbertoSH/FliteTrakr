@@ -27,6 +27,9 @@
       <module name="flitetrakr_integrationTest" target="1.8" />
       <module name="flitetrakr_main" target="1.8" />
       <module name="flitetrakr_reactive_integrationTest" target="1.8" />
+      <module name="flitetrakr_reactive_kotlin_integrationTest" target="1.8" />
+      <module name="flitetrakr_reactive_kotlin_main" target="1.8" />
+      <module name="flitetrakr_reactive_kotlin_test" target="1.8" />
       <module name="flitetrakr_reactive_main" target="1.8" />
       <module name="flitetrakr_reactive_test" target="1.8" />
       <module name="flitetrakr_sync_integrationTest" target="1.8" />

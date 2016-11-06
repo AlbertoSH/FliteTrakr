@@ -2,10 +2,18 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/core.iml" filepath="$PROJECT_DIR$/.idea/modules/core/core.iml" group="core" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/core_main.iml" filepath="$PROJECT_DIR$/.idea/modules/core/core_main.iml" group="core" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/core_test.iml" filepath="$PROJECT_DIR$/.idea/modules/core/core_test.iml" group="core" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/flitetrakr.iml" filepath="$PROJECT_DIR$/.idea/modules/flitetrakr.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/flitetrakr_integrationTest.iml" filepath="$PROJECT_DIR$/.idea/modules/flitetrakr_integrationTest.iml" group="flitetrakr" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/flitetrakr_main.iml" filepath="$PROJECT_DIR$/.idea/modules/flitetrakr_main.iml" group="flitetrakr" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/flitetrakr_test.iml" filepath="$PROJECT_DIR$/.idea/modules/flitetrakr_test.iml" group="flitetrakr" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/flitetrakr_reactive/flitetrakr_reactive.iml" filepath="$PROJECT_DIR$/.idea/modules/flitetrakr_reactive/flitetrakr_reactive.iml" group="flitetrakr_reactive" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/flitetrakr_reactive/flitetrakr_reactive_integrationTest.iml" filepath="$PROJECT_DIR$/.idea/modules/flitetrakr_reactive/flitetrakr_reactive_integrationTest.iml" group="flitetrakr_reactive" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/flitetrakr_reactive/flitetrakr_reactive_main.iml" filepath="$PROJECT_DIR$/.idea/modules/flitetrakr_reactive/flitetrakr_reactive_main.iml" group="flitetrakr_reactive" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/flitetrakr_reactive/flitetrakr_reactive_test.iml" filepath="$PROJECT_DIR$/.idea/modules/flitetrakr_reactive/flitetrakr_reactive_test.iml" group="flitetrakr_reactive" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/flitetrakr_sync/flitetrakr_sync.iml" filepath="$PROJECT_DIR$/.idea/modules/flitetrakr_sync/flitetrakr_sync.iml" group="flitetrakr_sync" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/flitetrakr_sync/flitetrakr_sync_integrationTest.iml" filepath="$PROJECT_DIR$/.idea/modules/flitetrakr_sync/flitetrakr_sync_integrationTest.iml" group="flitetrakr_sync" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/flitetrakr_sync/flitetrakr_sync_main.iml" filepath="$PROJECT_DIR$/.idea/modules/flitetrakr_sync/flitetrakr_sync_main.iml" group="flitetrakr_sync" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/flitetrakr_sync/flitetrakr_sync_test.iml" filepath="$PROJECT_DIR$/.idea/modules/flitetrakr_sync/flitetrakr_sync_test.iml" group="flitetrakr_sync" />
     </modules>
   </component>
 </project>

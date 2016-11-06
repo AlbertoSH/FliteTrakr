@@ -7,13 +7,18 @@ Solution for [Backend – FliteTrakr](https://bitbucket.org/adigsd/backend-flite
 
 From the root of the project just run
 
-    $ gradle build
+    $ gradle :flitetrakr_sync:build   # for sync version
+    $ gradle :flitetrakr_reactive:build   # for sync version
     
 Or, if you just don't want to run the tests you can also run
 
-    $ gradle assemble
+    $ gradle :flitetrakr_sync:assemble   # for sync version
+    $ gradle :flitetrakr_reactive:assemble   # for sync version
 
-The generated jar is at `build/libs/flitetrakr-1.0-SNAPSHOT.jar` 
+The generated jars are at 
+`flitetrakr_sync/build/libs/flitetrakr-1.0-SNAPSHOT.jar`
+and 
+`flitetrakr_reactive/build/libs/flitetrakr-1.0-SNAPSHOT.jar` 
 
 ---
 
@@ -21,15 +26,16 @@ The generated jar is at `build/libs/flitetrakr-1.0-SNAPSHOT.jar`
 
 Once you've build the project you can just run with `java -jar`:
 
-    $ java -jar build/libs/flitetrakr-1.0-SNAPSHOT.jar
+    $ java -jar flitetrakr_sync/build/libs/flitetrakr-1.0-SNAPSHOT.jar
 
-This will trigger the "manual" mode so you can enter manually your queries. You can also specify a file where the queries are found with:
+This will trigger the "manual" mode so you can enter manually your queries. 
+You can also specify a file where the queries are found with:
 
-    $ java -jar build/libs/flitetrakr-1.0-SNAPSHOT.jar input.txt
+    $ java -jar flitetrakr_sync/build/libs/flitetrakr-1.0-SNAPSHOT.jar input.txt
 
 or
 
-    $ cat input.txt | java -jar build/libs/flitetrakr-1.0-SNAPSHOT.jar
+    $ cat input.txt | java -jar flitetrakr_sync/build/libs/flitetrakr-1.0-SNAPSHOT.jar
     
 The effect is the same. By default the sync version is executed (see below)
 
@@ -58,7 +64,7 @@ write something wrong. Some example inputs are:
 ## Frameworks used
 
 * [**Guava**](https://github.com/google/guava): Google Core Libraries for Java 6+. `Preconditions` methods are used in constructors to ensure valid values
-* [**RxJava**](https://github.com/ReactiveX/RxJava): [Reactive Extensions](http://reactivex.io/) for Java. Used in the `reactive` version of the solution
+* [**RxJava 1**](https://github.com/ReactiveX/RxJava): [Reactive Extensions](http://reactivex.io/) for Java. Used in the `reactive` version of the solution
 * [**Junit**](http://junit.org/junit4/): test framework
 * [**Hamcrest**](http://hamcrest.org/): matchers for tests
 * [**Mockito**](http://mockito.org/): easy mocks for tests
@@ -81,17 +87,3 @@ to be integrated in some app without UX detriment.
 Although this reactive version allow us to use it in other environments
 this improvement isn't free. We pay the cost of setting up the `Observable`
 structures. So depending of the environment we should choose wisely
-
-The default version is the synchronous one. In order to change to the 
-reactive one go to the `build.gradle` file and look for these lines:
-
-    //mainClassName = "com.github.albertosh.flitetrakr.sync.Main"
-    mainClassName = "com.github.albertosh.flitetrakr.reactive.Main"
-    
-Just change the line that is commented so it looks like this
-
-    mainClassName = "com.github.albertosh.flitetrakr.sync.Main"
-    //mainClassName = "com.github.albertosh.flitetrakr.reactive.Main"
-
-You could just change the `mainClassName` but this way changing from one
-to the other is quicker

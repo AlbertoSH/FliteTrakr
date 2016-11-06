@@ -1,2 +1,5 @@
 rootProject.name = 'flitetrakr'
+include 'flitetrakr_sync'
+include 'flitetrakr_reactive'
+include 'core'
 

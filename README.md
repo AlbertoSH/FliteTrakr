@@ -8,17 +8,19 @@ Solution for [Backend – FliteTrakr](https://bitbucket.org/adigsd/backend-flite
 From the root of the project just run
 
     $ gradle :flitetrakr_sync:build   # for sync version
-    $ gradle :flitetrakr_reactive:build   # for sync version
+    $ gradle :flitetrakr_reactive:build   # for reactive version
+    $ gradle :flitetrakr_sync_kotlin:build   # for kotlin sync version
     
 Or, if you just don't want to run the tests you can also run
 
     $ gradle :flitetrakr_sync:assemble   # for sync version
-    $ gradle :flitetrakr_reactive:assemble   # for sync version
+    $ gradle :flitetrakr_reactive:assemble   # for reactive version
+    $ gradle :flitetrakr_sync_kotlin:assemble   # for sync version
 
 The generated jars are at 
 `flitetrakr_sync/build/libs/flitetrakr-1.0-SNAPSHOT.jar`
-and 
-`flitetrakr_reactive/build/libs/flitetrakr-1.0-SNAPSHOT.jar` 
+, `flitetrakr_reactive/build/libs/flitetrakr-1.0-SNAPSHOT.jar`
+ and `flitetrakr_sync_kotlin/build/libs/flitetrakr-1.0-SNAPSHOT.jar`
 
 ---
 
@@ -87,3 +89,17 @@ to be integrated in some app without UX detriment.
 Although this reactive version allow us to use it in other environments
 this improvement isn't free. We pay the cost of setting up the `Observable`
 structures. So depending of the environment we should choose wisely
+
+---
+
+## Kotlin
+
+Kotlin is a statically-typed programming language that runs on the Java 
+Virtual Machine and also can be compiled to JavaScript source code. 
+Its primary development is from a team of JetBrains programmers.
+Kotlin was named Language of the Month in the January 2012 issue of 
+Dr. Dobb's Journal. While not syntax compatible with Java, Kotlin is
+designed to interoperate with Java code and is reliant on Java code 
+from the existing Java Class Library, such as the collections framework.
+
+You can find more info about it in [its website](https://kotlinlang.org/)

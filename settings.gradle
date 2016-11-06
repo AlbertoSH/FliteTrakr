@@ -2,4 +2,6 @@ rootProject.name = 'flitetrakr'
 include 'flitetrakr_sync'
 include 'flitetrakr_reactive'
 include 'core'
+include 'core_kotlin'
+include 'flitetrakr_sync_kotlin'
 

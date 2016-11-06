@@ -1,33 +1,30 @@
 group 'com.github.albertosh'
 version '1.0-SNAPSHOT'
 
-apply plugin: 'java'
+buildscript {
+    ext.kotlin_version = '1.0.4'
+
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+apply plugin: 'kotlin'
 apply plugin: 'application'
 
-mainClassName = "com.github.albertosh.flitetrakr.sync.Main"
-
-jar {
-
-    from {
-        configurations.runtime.collect {
-            it.isDirectory() ? it : zipTree(it)
-        }
-
-        configurations.compile.collect {
-            it.isDirectory() ? it : zipTree(it)
-        }
-    }
-
-    manifest {
-        attributes 'Main-Class': mainClassName
-    }
-
-    exclude 'META-INF/*.RSA', 'META-INF/*.SF','META-INF/*.DSA'
-}
+mainClassName = "com.github.albertosh.flitetrakr.MainKt"
 
 repositories {
     mavenCentral()
 }
+
+dependencies {
+    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+}
+
 
 sourceSets {
     integrationTest {
@@ -67,3 +64,10 @@ dependencies {
     compile project(':core_kotlin')
 }
 
+jar {
+    manifest {
+        attributes 'Main-Class': 'com.github.albertosh.flitetrakr.MainKt'
+    }
+
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+}

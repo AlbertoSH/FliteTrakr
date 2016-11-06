@@ -3,6 +3,10 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/core.iml" filepath="$PROJECT_DIR$/.idea/modules/core/core.iml" group="core" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/core_kotlin/core_kotlin.iml" filepath="$PROJECT_DIR$/.idea/modules/core_kotlin/core_kotlin.iml" group="core_kotlin" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/core_kotlin/core_kotlin_integrationTest.iml" filepath="$PROJECT_DIR$/.idea/modules/core_kotlin/core_kotlin_integrationTest.iml" group="core_kotlin" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/core_kotlin/core_kotlin_main.iml" filepath="$PROJECT_DIR$/.idea/modules/core_kotlin/core_kotlin_main.iml" group="core_kotlin" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/core_kotlin/core_kotlin_test.iml" filepath="$PROJECT_DIR$/.idea/modules/core_kotlin/core_kotlin_test.iml" group="core_kotlin" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/core_main.iml" filepath="$PROJECT_DIR$/.idea/modules/core/core_main.iml" group="core" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/core_test.iml" filepath="$PROJECT_DIR$/.idea/modules/core/core_test.iml" group="core" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/flitetrakr.iml" filepath="$PROJECT_DIR$/.idea/modules/flitetrakr.iml" />
@@ -12,6 +16,10 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/flitetrakr_reactive/flitetrakr_reactive_test.iml" filepath="$PROJECT_DIR$/.idea/modules/flitetrakr_reactive/flitetrakr_reactive_test.iml" group="flitetrakr_reactive" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/flitetrakr_sync/flitetrakr_sync.iml" filepath="$PROJECT_DIR$/.idea/modules/flitetrakr_sync/flitetrakr_sync.iml" group="flitetrakr_sync" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/flitetrakr_sync/flitetrakr_sync_integrationTest.iml" filepath="$PROJECT_DIR$/.idea/modules/flitetrakr_sync/flitetrakr_sync_integrationTest.iml" group="flitetrakr_sync" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/flitetrakr_sync_kotlin/flitetrakr_sync_kotlin.iml" filepath="$PROJECT_DIR$/.idea/modules/flitetrakr_sync_kotlin/flitetrakr_sync_kotlin.iml" group="flitetrakr_sync_kotlin" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/flitetrakr_sync_kotlin/flitetrakr_sync_kotlin_integrationTest.iml" filepath="$PROJECT_DIR$/.idea/modules/flitetrakr_sync_kotlin/flitetrakr_sync_kotlin_integrationTest.iml" group="flitetrakr_sync_kotlin" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/flitetrakr_sync_kotlin/flitetrakr_sync_kotlin_main.iml" filepath="$PROJECT_DIR$/.idea/modules/flitetrakr_sync_kotlin/flitetrakr_sync_kotlin_main.iml" group="flitetrakr_sync_kotlin" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/flitetrakr_sync_kotlin/flitetrakr_sync_kotlin_test.iml" filepath="$PROJECT_DIR$/.idea/modules/flitetrakr_sync_kotlin/flitetrakr_sync_kotlin_test.iml" group="flitetrakr_sync_kotlin" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/flitetrakr_sync/flitetrakr_sync_main.iml" filepath="$PROJECT_DIR$/.idea/modules/flitetrakr_sync/flitetrakr_sync_main.iml" group="flitetrakr_sync" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/flitetrakr_sync/flitetrakr_sync_test.iml" filepath="$PROJECT_DIR$/.idea/modules/flitetrakr_sync/flitetrakr_sync_test.iml" group="flitetrakr_sync" />
     </modules>

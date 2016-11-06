@@ -19,6 +19,9 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="core_kotlin_integrationTest" target="1.8" />
+      <module name="core_kotlin_main" target="1.8" />
+      <module name="core_kotlin_test" target="1.8" />
       <module name="core_main" target="1.8" />
       <module name="core_test" target="1.8" />
       <module name="flitetrakr_integrationTest" target="1.8" />
@@ -27,6 +30,9 @@
       <module name="flitetrakr_reactive_main" target="1.8" />
       <module name="flitetrakr_reactive_test" target="1.8" />
       <module name="flitetrakr_sync_integrationTest" target="1.8" />
+      <module name="flitetrakr_sync_kotlin_integrationTest" target="1.8" />
+      <module name="flitetrakr_sync_kotlin_main" target="1.8" />
+      <module name="flitetrakr_sync_kotlin_test" target="1.8" />
       <module name="flitetrakr_sync_main" target="1.8" />
       <module name="flitetrakr_sync_test" target="1.8" />
       <module name="flitetrakr_test" target="1.8" />

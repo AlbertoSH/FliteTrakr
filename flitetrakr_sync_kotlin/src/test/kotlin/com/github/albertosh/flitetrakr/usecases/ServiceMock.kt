@@ -5,7 +5,6 @@ import com.github.albertosh.flitetrakr.services.IConnectionService
 import io.kotlintest.mock.`when`
 import io.kotlintest.mock.mock
 import org.mockito.ArgumentMatchers.anyString
-import org.mockito.Mockito
 
 fun mockService(): IConnectionService {
     val service = mock<IConnectionService>()

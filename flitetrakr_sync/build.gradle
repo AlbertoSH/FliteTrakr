@@ -22,7 +22,7 @@ jar {
         attributes 'Main-Class': mainClassName
     }
 
-    exclude 'META-INF/*.RSA', 'META-INF/*.SF','META-INF/*.DSA'
+    exclude 'META-INF/*.RSA', 'META-INF/*.SF', 'META-INF/*.DSA'
 }
 
 repositories {

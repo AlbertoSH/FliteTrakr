@@ -16,7 +16,7 @@ data class ConnectionsBelowPriceUseCaseInput(val from: String, val to: String, v
 
 data class ConnectionsBelowPriceUseCaseOutput(val connections: List<MultipleConnections>)
 
-sealed class ConnectionsBelowPriceUseCaseError(message : String) : RuntimeException(message){
+sealed class ConnectionsBelowPriceUseCaseError(message: String) : RuntimeException(message) {
     object connectionNotFound : ConnectionsBelowPriceUseCaseError(
             LanguageUtils.getMessage(Message.CONNECTION_NOT_FOUND))
 }

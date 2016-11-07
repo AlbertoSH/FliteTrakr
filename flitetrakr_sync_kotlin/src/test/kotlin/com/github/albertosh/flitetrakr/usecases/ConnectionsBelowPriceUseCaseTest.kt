@@ -7,7 +7,6 @@ import com.nhaarman.mockito_kotlin.doThrow
 import com.nhaarman.mockito_kotlin.mock
 import io.kotlintest.mock.`when`
 import io.kotlintest.specs.ShouldSpec
-import org.mockito.Mockito
 import org.mockito.Mockito.verifyZeroInteractions
 
 class ConnectionsBelowPriceUseCaseTest : ShouldSpec() {
@@ -40,7 +39,7 @@ class ConnectionsBelowPriceUseCaseTest : ShouldSpec() {
                 exception shouldBe ConnectionsBelowPriceUseCaseError.connectionNotFound
             }
 
-            should("return the existing connections ordered below some price") {
+            should("look for connections below some price if at least a connection below that price exists") {
                 val service: IConnectionService = mockService()
                 val cheapestConnectionUseCase = mock<ICheapestConnectionUseCase>()
                 val useCase = ConnectionsBelowPriceUseCase(cheapestConnectionUseCase, service)

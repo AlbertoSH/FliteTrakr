@@ -1,7 +1,6 @@
 package com.github.albertosh.flitetrakr.usecases
 
 import com.github.albertosh.flitetrakr.model.MultipleConnections
-import com.nhaarman.mockito_kotlin.verifyZeroInteractions
 import io.kotlintest.specs.ShouldSpec
 
 class ConnectionsBelowPriceUseCaseTest : ShouldSpec() {
@@ -29,7 +28,7 @@ class ConnectionsBelowPriceUseCaseTest : ShouldSpec() {
                 exception shouldBe ConnectionsBelowPriceUseCaseError.connectionNotFound
             }
 
-            should("return the existing connections ordered below some price") {
+            should("look for connections below some price if at least a connection below that price exists") {
                 val service = buildService()
                 val cheapestConnectionUseCase: ICheapestConnectionUseCase = CheapestConnectionUseCase(service)
                 val useCase = ConnectionsBelowPriceUseCase(cheapestConnectionUseCase, service)

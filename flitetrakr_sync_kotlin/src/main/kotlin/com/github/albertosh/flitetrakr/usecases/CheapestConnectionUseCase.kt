@@ -15,7 +15,7 @@ data class CheapestConnectionUseCaseInput(val from: String, val to: String)
 
 data class CheapestConnectionUseCaseOutput(val cities: List<String>, val price: Int)
 
-sealed class CheapestConnectionUseCaseError(message : String) : RuntimeException(message){
+sealed class CheapestConnectionUseCaseError(message: String) : RuntimeException(message) {
     object connectionNotFound : CheapestConnectionUseCaseError(
             LanguageUtils.getMessage(Message.CONNECTION_NOT_FOUND))
 }

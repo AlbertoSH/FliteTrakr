@@ -16,14 +16,15 @@ class ConnectionsWithMaximumStopsUseCaseTest : ShouldSpec() {
                 val from = "LHR"
                 val to = "NUE"
 
-                val output = usecase.execute(
+
+                usecase.execute(
                         ConnectionsWithMaximumStopsUseCaseInput(
                                 from,
                                 to,
                                 stops
-                        )
-                )
-                output shouldBe ConnectionsWithMaximumStopsUseCaseOutput(2)
+                        ))
+                        .test()
+                        .assertValues(ConnectionsWithMaximumStopsUseCaseOutput(2))
             }
 
         }

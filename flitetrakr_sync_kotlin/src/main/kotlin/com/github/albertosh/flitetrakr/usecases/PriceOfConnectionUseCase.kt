@@ -14,7 +14,7 @@ data class PriceOfConnectionUseCaseInput(val codes: List<String>)
 
 data class PriceOfConnectionUseCaseOutput(val price: Int)
 
-sealed class PriceOfConnectionUseCaseError(message : String) : RuntimeException(message){
+sealed class PriceOfConnectionUseCaseError(message: String) : RuntimeException(message) {
     object connectionNotFound : PriceOfConnectionUseCaseError(
             LanguageUtils.getMessage(Message.CONNECTION_NOT_FOUND))
 }

@@ -13,11 +13,11 @@ interface ICheapestConnectionUseCase {
 
 }
 
-data class CheapestConnectionUseCaseInput(val from : String, val to : String)
+data class CheapestConnectionUseCaseInput(val from: String, val to: String)
 
-data class CheapestConnectionUseCaseOutput(val cities : List<String>, val price : Int)
+data class CheapestConnectionUseCaseOutput(val cities: List<String>, val price: Int)
 
-sealed class CheapestConnectionUseCaseError(message : String) : RuntimeException(message){
+sealed class CheapestConnectionUseCaseError(message: String) : RuntimeException(message) {
     object connectionNotFound : CheapestConnectionUseCaseError(
             LanguageUtils.getMessage(Message.CONNECTION_NOT_FOUND))
 }
@@ -68,7 +68,7 @@ class CheapestConnectionUseCase(
                         throw CheapestConnectionUseCaseError.connectionNotFound
                     } else {
                         val citiesVisited = mutableListOf<String>()
-                        var cityVisited : String? = input.to
+                        var cityVisited: String? = input.to
                         citiesVisited.add(cityVisited!!)
                         do {
                             cityVisited = father[cityVisited]

@@ -9,7 +9,7 @@ import io.reactivex.Single
 
 interface IConnectionService {
 
-    fun addConnection(connection: Connection) : Completable
+    fun addConnection(connection: Connection): Completable
 
     fun recoverConnection(from: String, to: String): Single<Connection>
 
@@ -19,7 +19,7 @@ interface IConnectionService {
 
 }
 
-sealed class ConnectionServiceError(message : String) : RuntimeException(message){
+sealed class ConnectionServiceError(message: String) : RuntimeException(message) {
     object connectionNotFound : ConnectionServiceError(
             LanguageUtils.getMessage(Message.CONNECTION_NOT_FOUND))
 }
@@ -36,7 +36,7 @@ class ConnectionService : IConnectionService {
         return Flowable.fromIterable(storedCities)
     }
 
-    override fun addConnection(connection: Connection) : Completable {
+    override fun addConnection(connection: Connection): Completable {
         return Completable.create {
             var cityConnections = fromConnections.get(connection.from)
             if (cityConnections == null) {

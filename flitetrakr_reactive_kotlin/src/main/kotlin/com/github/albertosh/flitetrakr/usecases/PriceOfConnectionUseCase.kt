@@ -7,7 +7,6 @@ import com.github.albertosh.flitetrakr.util.language.Message
 import io.reactivex.Flowable
 import io.reactivex.Single
 import io.reactivex.SingleSource
-import io.reactivex.functions.Function
 
 interface IPriceOfConnectionUseCase {
 
@@ -19,7 +18,7 @@ data class PriceOfConnectionUseCaseInput(val codes: List<String>)
 
 data class PriceOfConnectionUseCaseOutput(val price: Int)
 
-sealed class PriceOfConnectionUseCaseError(message : String) : RuntimeException(message){
+sealed class PriceOfConnectionUseCaseError(message: String) : RuntimeException(message) {
     object connectionNotFound : PriceOfConnectionUseCaseError(
             LanguageUtils.getMessage(Message.CONNECTION_NOT_FOUND))
 }
@@ -38,8 +37,10 @@ class PriceOfConnectionUseCase(
                 .mapIndexed { i, city -> Pair(codes[i], city) }
 
         return Flowable.fromIterable(pairedCities)
-                .flatMap { service.recoverConnection(it.first, it.second)
-                        .toFlowable() }
+                .flatMap {
+                    service.recoverConnection(it.first, it.second)
+                            .toFlowable()
+                }
                 .map { it.price }
                 .reduce { acc, price -> acc + price }
                 .map { PriceOfConnectionUseCaseOutput(it) }

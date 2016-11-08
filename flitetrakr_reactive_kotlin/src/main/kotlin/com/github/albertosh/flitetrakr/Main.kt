@@ -137,12 +137,12 @@ private fun executeCheapestConnectionUseCase(inputString: String) {
     } else {
         val input = CheapestConnectionUseCaseInput(
                 from = matcher.group(1),
-                to = matcher.group(1)
+                to = matcher.group(2)
         )
 
         cheapestConnectionUseCase.execute(input)
                 .subscribe(
-                        { println(it.cities.joinToString() + "-" + it.price) },
+                        { println(it.cities.joinToString(separator = "-") + "-" + it.price) },
                         { when(it) {
                             is CheapestConnectionUseCaseError.connectionNotFound ->
                                 println(LanguageUtils.getMessage(Message.CONNECTION_NOT_FOUND))
@@ -207,6 +207,7 @@ private fun executeConnectionsBelowPrice(inputString: String) {
         )
         try {
             connectionsBelowPriceUseCase.execute(input)
+                    .lastElement()
                     .subscribe(
                             {  println(it.connections
                                     .map { it.cities.joinToString(separator = "-") + "-" + it.price }

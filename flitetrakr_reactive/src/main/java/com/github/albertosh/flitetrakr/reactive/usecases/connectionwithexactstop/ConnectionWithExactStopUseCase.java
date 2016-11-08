@@ -39,8 +39,7 @@ public class ConnectionWithExactStopUseCase
                         .stops(input.getStops() - 1)
                         .build())
                 .flatMap(newInput -> execute(newInput)
-                        .toObservable()
-                        .subscribeOn(Schedulers.newThread()))
+                        .toObservable())
                 .reduce(0, (accum, value) -> accum + value);
     }
 }

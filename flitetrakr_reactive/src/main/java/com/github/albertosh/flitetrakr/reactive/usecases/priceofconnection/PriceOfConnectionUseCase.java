@@ -37,7 +37,6 @@ public class PriceOfConnectionUseCase
             subscriber.onCompleted();
         })
                 .flatMap(pair -> connectionService.recoverConnection(pair.first, pair.second)
-                        .subscribeOn(Schedulers.io())
                         .toObservable())
                 .map(Connection::getPrice)
                 .reduce(0, (accum, price) -> accum + price)

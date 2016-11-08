@@ -137,8 +137,6 @@ public class Main {
             PriceOfConnectionUseCaseInput input = inputBuilder.build();
 
             priceOfConnectionUseCase.execute(input)
-                    .subscribeOn(Schedulers.immediate())
-                    .observeOn(Schedulers.immediate())
                     .subscribe(
                             System.out::println,
                             error ->
@@ -160,8 +158,6 @@ public class Main {
                     .build();
 
             cheapestConnectionUseCase.execute(input)
-                    .subscribeOn(Schedulers.immediate())
-                    .observeOn(Schedulers.immediate())
                     .subscribe(next ->
                                     System.out.println(
                                             String.join("-", next.getCities())
@@ -187,8 +183,6 @@ public class Main {
                     .build();
 
             connectionWithMaximumStopsUseCase.execute(input)
-                    .subscribeOn(Schedulers.immediate())
-                    .observeOn(Schedulers.immediate())
                     .subscribe(System.out::println);
         }
     }
@@ -207,8 +201,6 @@ public class Main {
                     .build();
 
             connectionWithExactStopUseCase.execute(input)
-                    .subscribeOn(Schedulers.immediate())
-                    .observeOn(Schedulers.immediate())
                     .subscribe(System.out::println);
         }
     }

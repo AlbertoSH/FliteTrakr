@@ -21,7 +21,6 @@ public class ConnectionWithMaximumStopUseCase
         int maxStops = input.getStops();
         return Observable.range(0, maxStops + 1)
                 .flatMap(currentStops -> executeUseCaseWithStops(input, currentStops)
-                        .subscribeOn(Schedulers.computation())
                         .toObservable())
                 .reduce(0, (accum, value) -> accum + value)
                 .toSingle()

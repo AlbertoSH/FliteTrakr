@@ -11,7 +11,7 @@ class ConnectionsBelowPriceUseCaseTest : ShouldSpec() {
             should("throw an error if a connection doesn't exist") {
                 val service: IConnectionService = buildService()
                 val cheapestConnectionUseCase = CheapestConnectionUseCase(service)
-                val useCase = ConnectionsBelowPriceUseCase(service, cheapestConnectionUseCase)
+                val useCase = ConnectionsBelowPriceUseCase(cheapestConnectionUseCase, service)
 
                 useCase.execute(
                         ConnectionsBelowPriceUseCaseInput(
@@ -27,7 +27,7 @@ class ConnectionsBelowPriceUseCaseTest : ShouldSpec() {
             should("look for connections below some price if at least a connection below that price exists") {
                 val service: IConnectionService = buildService()
                 val cheapestConnection = CheapestConnectionUseCase(service)
-                val usecase = ConnectionsBelowPriceUseCase(service, cheapestConnection)
+                val usecase = ConnectionsBelowPriceUseCase(cheapestConnection, service)
 
                 usecase.execute(
                         ConnectionsBelowPriceUseCaseInput(
@@ -60,7 +60,7 @@ class ConnectionsBelowPriceUseCaseTest : ShouldSpec() {
             should("halt when the cheapest connection is over maximum price") {
                 val service: IConnectionService = buildService()
                 val cheapestConnectionUseCase = CheapestConnectionUseCase(service)
-                val useCase = ConnectionsBelowPriceUseCase(service, cheapestConnectionUseCase)
+                val useCase = ConnectionsBelowPriceUseCase(cheapestConnectionUseCase, service)
 
                 useCase.execute(
                         ConnectionsBelowPriceUseCaseInput(
@@ -77,7 +77,7 @@ class ConnectionsBelowPriceUseCaseTest : ShouldSpec() {
             should("return the existing connections ordered below some price even if the destination and origin is the same") {
                 val service: IConnectionService = buildService()
                 val cheapestConnectionUseCase = CheapestConnectionUseCase(service)
-                val useCase = ConnectionsBelowPriceUseCase(service, cheapestConnectionUseCase)
+                val useCase = ConnectionsBelowPriceUseCase(cheapestConnectionUseCase, service)
 
                 useCase.execute(
                         ConnectionsBelowPriceUseCaseInput(

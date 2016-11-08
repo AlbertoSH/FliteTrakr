@@ -115,7 +115,6 @@ public class ConnectionsBelowPriceUseCase
                                         return performDPSSearch(city, to,
                                                 price - connection.getPrice(), newBuilder);
                                 })
-                                .subscribeOn(Schedulers.computation())
                 );
     }
 

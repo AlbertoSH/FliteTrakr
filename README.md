@@ -10,17 +10,20 @@ From the root of the project just run
     $ gradle :flitetrakr_sync:build   # for sync version
     $ gradle :flitetrakr_reactive:build   # for reactive version
     $ gradle :flitetrakr_sync_kotlin:build   # for kotlin sync version
+    $ gradle :flitetrakr_reactive_kotlin:build   # for kotlin reactive version
     
 Or, if you just don't want to run the tests you can also run
 
     $ gradle :flitetrakr_sync:assemble   # for sync version
     $ gradle :flitetrakr_reactive:assemble   # for reactive version
-    $ gradle :flitetrakr_sync_kotlin:assemble   # for sync version
+    $ gradle :flitetrakr_sync_kotlin:assemble   # for kotlin sync version
+    $ gradle :flitetrakr_sync_kotlin:assemble   # for kotlin reactive version
 
 The generated jars are at 
-`flitetrakr_sync/build/libs/flitetrakr-1.0-SNAPSHOT.jar`
-, `flitetrakr_reactive/build/libs/flitetrakr-1.0-SNAPSHOT.jar`
- and `flitetrakr_sync_kotlin/build/libs/flitetrakr-1.0-SNAPSHOT.jar`
+`flitetrakr_sync/build/libs/flitetrakr_sync-1.0-SNAPSHOT.jar`,
+ `flitetrakr_reactive/build/libs/flitetrakr_reactive-1.0-SNAPSHOT.jar`,
+ `flitetrakr_sync_kotlin/build/libs/flitetrakr_sync_kotlin-1.0-SNAPSHOT.jar`
+ and `flitetrakr_reactive_kotlin/build/libs/flitetrakr_reactive_kotlin-1.0-SNAPSHOT.jar`
 
 ---
 
@@ -28,16 +31,16 @@ The generated jars are at
 
 Once you've build the project you can just run with `java -jar`:
 
-    $ java -jar flitetrakr_sync/build/libs/flitetrakr-1.0-SNAPSHOT.jar
+    $ java -jar flitetrakr_sync/build/libs/flitetrakr_sync-1.0-SNAPSHOT.jar
 
 This will trigger the "manual" mode so you can enter manually your queries. 
 You can also specify a file where the queries are found with:
 
-    $ java -jar flitetrakr_sync/build/libs/flitetrakr-1.0-SNAPSHOT.jar input.txt
+    $ java -jar flitetrakr_sync/build/libs/flitetrakr_sync-1.0-SNAPSHOT.jar input.txt
 
 or
 
-    $ cat input.txt | java -jar flitetrakr_sync/build/libs/flitetrakr-1.0-SNAPSHOT.jar
+    $ cat input.txt | java -jar flitetrakr_sync/build/libs/flitetrakr_sync-1.0-SNAPSHOT.jar
     
 The effect is the same. By default the sync version is executed (see below)
 
@@ -66,10 +69,17 @@ write something wrong. Some example inputs are:
 ## Frameworks used
 
 * [**Guava**](https://github.com/google/guava): Google Core Libraries for Java 6+. `Preconditions` methods are used in constructors to ensure valid values
-* [**RxJava 1**](https://github.com/ReactiveX/RxJava): [Reactive Extensions](http://reactivex.io/) for Java. Used in the `reactive` version of the solution
+* [**RxJava 1**](https://github.com/ReactiveX/RxJava/tree/1.x): [Reactive Extensions](http://reactivex.io/) for Java. Used in the `reactive` version of the solution*
+* [**RxJava 2**](https://github.com/ReactiveX/RxJava/tree/2.x): [Reactive Extensions](http://reactivex.io/) for Java. Used in the `reactive_kotlin` version of the solution*
 * [**Junit**](http://junit.org/junit4/): test framework
+* [**KotlinTest**](https://github.com/kotlintest/kotlintest): test framework
 * [**Hamcrest**](http://hamcrest.org/): matchers for tests
 * [**Mockito**](http://mockito.org/): easy mocks for tests
+
+> *NOTE: RxJava2 is a completely new implementation of RxJava 
+ rewritten from scratch on top of the [Reactive-Streams](http://www.reactive-streams.org/) specification.
+As Reactive-Streams has a different architecture some changes needs to be 
+made in order to use it
 
 ---
 

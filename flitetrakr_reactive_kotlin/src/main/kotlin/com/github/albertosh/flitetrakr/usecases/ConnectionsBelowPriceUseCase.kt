@@ -25,8 +25,8 @@ sealed class ConnectionsBelowPriceUseCaseError(message: String) : RuntimeExcepti
 
 
 class ConnectionsBelowPriceUseCase(
-        private val service: IConnectionService,
-        private val cheapestConnectionUseCase: ICheapestConnectionUseCase)
+        private val cheapestConnectionUseCase: ICheapestConnectionUseCase,
+        private val service: IConnectionService)
 : IConnectionsBelowPriceUseCase {
 
     override fun execute(input: ConnectionsBelowPriceUseCaseInput): Flowable<ConnectionsBelowPriceUseCaseOutput> =

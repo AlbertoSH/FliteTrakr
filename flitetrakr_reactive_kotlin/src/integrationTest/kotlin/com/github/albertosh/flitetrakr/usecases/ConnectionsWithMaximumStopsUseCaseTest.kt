@@ -16,7 +16,6 @@ class ConnectionsWithMaximumStopsUseCaseTest : ShouldSpec() {
                 val from = "LHR"
                 val to = "NUE"
 
-
                 usecase.execute(
                         ConnectionsWithMaximumStopsUseCaseInput(
                                 from,

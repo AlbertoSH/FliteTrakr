@@ -16,13 +16,13 @@ class ConnectionsBelowPriceUseCaseTest : ShouldSpec() {
             should("throw an error if a connection doesn't exist") {
                 val service: IConnectionService = mockService()
                 val cheapestConnectionUseCase = mock<ICheapestConnectionUseCase>()
-                val useCase = ConnectionsBelowPriceUseCase(service, cheapestConnectionUseCase)
+                val usecase = ConnectionsBelowPriceUseCase(cheapestConnectionUseCase, service)
 
                 // Force that there is no connection
                 `when`(cheapestConnectionUseCase.execute(any()))
                         .thenReturn(Single.error(CheapestConnectionUseCaseError.connectionNotFound))
 
-                useCase.execute(
+                usecase.execute(
                         ConnectionsBelowPriceUseCaseInput(
                                 from = "NUE",
                                 to = "DBX",
@@ -35,10 +35,10 @@ class ConnectionsBelowPriceUseCaseTest : ShouldSpec() {
 
             should("look for connections below some price if at least a connection below that price exists") {
                 val service: IConnectionService = mockService()
-                val cheapestConnection = mock<ICheapestConnectionUseCase>()
-                val usecase = ConnectionsBelowPriceUseCase(service, cheapestConnection)
+                val cheapestConnectionUseCase = mock<ICheapestConnectionUseCase>()
+                val usecase = ConnectionsBelowPriceUseCase(cheapestConnectionUseCase, service)
 
-                `when`(cheapestConnection.execute(any()))
+                `when`(cheapestConnectionUseCase.execute(any()))
                         .thenReturn(Single.just(CheapestConnectionUseCaseOutput(emptyList(), 0)))
 
                 usecase.execute(
@@ -72,7 +72,7 @@ class ConnectionsBelowPriceUseCaseTest : ShouldSpec() {
             should("halt when the cheapest connection is over maximum price") {
                 val service: IConnectionService = mockService()
                 val cheapestConnectionUseCase = mock<ICheapestConnectionUseCase>()
-                val useCase = ConnectionsBelowPriceUseCase(service, cheapestConnectionUseCase)
+                val useCase = ConnectionsBelowPriceUseCase(cheapestConnectionUseCase, service)
 
                 `when`(
                         cheapestConnectionUseCase.execute(any()))
@@ -95,7 +95,7 @@ class ConnectionsBelowPriceUseCaseTest : ShouldSpec() {
             should("return the existing connections ordered below some price even if the destination and origin is the same") {
                 val service: IConnectionService = mockService()
                 val cheapestConnectionUseCase = mock<ICheapestConnectionUseCase>()
-                val useCase = ConnectionsBelowPriceUseCase(service, cheapestConnectionUseCase)
+                val useCase = ConnectionsBelowPriceUseCase(cheapestConnectionUseCase, service)
 
                 // Force that at least a cheap connection exists
                 `when`(
